@@ -1,16 +1,10 @@
 setlocal EnableDelayedExpansion
 
 @echo off
-set TOOLCHAIN=%1
 
-if %TOOLCHAIN% equ msvc2015 (
-    set CMAKE_GENERATOR=Visual Studio 14 2015 Win64
-    call "%VS140COMNTOOLS%..\..\VC\bin\amd64\vcvars64.bat"
-    if !errorlevel! neq 0 exit /b !errorlevel!
-) else (
-    echo Failure: unknown msvc version: %TOOLCHAIN%
-    exit /b 1
-)
+set CMAKE_GENERATOR=Visual Studio 14 2015 Win64
+call "%VS140COMNTOOLS%..\..\VC\bin\amd64\vcvars64.bat"
+if !errorlevel! neq 0 exit /b !errorlevel!
 
 set ROOT_DIR=%~dp0
 set BUILD_DIR=%ROOT_DIR%/build.%TOOLCHAIN%

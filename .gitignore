@@ -1,2 +1,4 @@
 build.*
 artifacts/*
+**/npm-debug.log
+node_modules/

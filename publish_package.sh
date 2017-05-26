@@ -21,9 +21,6 @@ git merge origin/$FL4RE_PUBLISH_BRANCH
 # npm version patch w/o git actions and obtain the new patch version that appears in the changed package.json file
 FL4RE_TAGGED_VERSION=$(npm --no-git-tag-version version patch)
 
-# fianlly npm publish the new version 
-npm publish
-
 # all good, so now commit back the package.json and create a tag for this version
 git add package.json
 git commit -m "$FL4RE_TAGGED_VERSION"
@@ -38,6 +35,9 @@ git config --global credential.helper "store --file=\"$WORKSPACE/gh.credentials\
 git push --atomic origin refs/heads/$FL4RE_PUBLISH_BRANCH refs/tags/$FL4RE_TAGGED_VERSION
 git config --global --remove-section credential
 rm $WORKSPACE/gh.credentials
+
+# finally npm publish the new version
+npm publish
 
 exit 0
 

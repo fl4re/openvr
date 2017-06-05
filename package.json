@@ -19,6 +19,6 @@
     "install": "prades install"
   },
   "dependencies": {
-    "@sb/prades": "^0.4.0"
+    "@sb/prades": "^0.4.1"
   }
 }

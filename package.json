@@ -1,6 +1,6 @@
 {
   "name": "@sb/openvr",
-  "version": "1.0.52",
+  "version": "1.0.53",
   "description": "OpenVR package for Valhalla",
   "repository": "https://github.com/fl4re/openvr",
   "private": false,
